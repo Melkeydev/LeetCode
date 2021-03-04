@@ -33,7 +33,19 @@ class Solution:
         return count
 
     def square_array(self, nums):
-        pass
+        if len(array) == 0:
+            return array
+
+        nums = [num**2 for num in nums]
+        nums.sort()
+
+        return nums
+
+        """
+        Better Solution:
+        return sorted([i*i for i in nums])
+        """
+
 
 if __name__ == "__main__":
     sol = Solution()
@@ -55,8 +67,14 @@ if __name__ == "__main__":
         for array in test_consecutive:
             print(sol.even_count(array))
 
-    
-    
-    
+    test_consecutive = [
+        [-4,-1,0,3,10],
+        [-7,-3,2,3,11]
+    ]
+
+    for array in test_consecutive:
+        sol.square_array(array)
+
+
 
 
